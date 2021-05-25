@@ -3,11 +3,11 @@ package com.company;
 public class Country implements Comparable<Country>{
     private String symbol;
     private String name;
-    private int regularVat;
+    private double regularVat;
     private double reducedVat;
     private boolean usingSpecialVat;
 
-    public Country(String symbol, String name, int regularVat, double reducedVat, boolean usingSpecialVat) {
+    public Country(String symbol, String name, double regularVat, double reducedVat, boolean usingSpecialVat) {
         this.symbol = symbol;
         this.name = name;
         this.regularVat = regularVat;
@@ -45,7 +45,7 @@ public class Country implements Comparable<Country>{
         this.symbol = symbol;
     }
 
-    public int getRegularVat() {
+    public double getRegularVat() {
         return regularVat;
     }
 
@@ -75,7 +75,7 @@ public class Country implements Comparable<Country>{
 
     @Override
     public int compareTo(Country second) {
-        return Integer.compare(this.getRegularVat(), second.getRegularVat());
+        return Double.compare(this.getRegularVat(), second.getRegularVat());
     }
 
     public String fileFormat(){
