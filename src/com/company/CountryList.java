@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CountryList {
+public class CountryList{
     ArrayList<Country> listOfCountries = new ArrayList<>();
 
     public void loadFromFile(String file) {

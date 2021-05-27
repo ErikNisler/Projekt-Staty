@@ -11,7 +11,7 @@ public class Main {
         Scanner userEntry = new Scanner(System.in);
         CountryList countriesListOver20 = new CountryList();
         ArrayList<Country> countriesOver20 = new ArrayList<>();
-        ArrayList<Country> countriesUnder20 = new ArrayList<>();
+        ArrayList<String> countriesUnder20 = new ArrayList<>();
         CountryList countryList = new CountryList();
 
         /**Načtení ze souboru*/
@@ -33,16 +33,17 @@ public class Main {
                 countriesOver20.add(country);
                 System.out.println(country.getDecription());
             } else {
-                countriesUnder20.add(country);
+                countriesUnder20.add(country.getSymbol());
             }
         }
         /**Pod výpis doplň řádek s rovnítky pro oddělení a poté seznam zkratek států, které ve výpisu nefigurují.*/
         System.out.println();
         System.out.println("==================");
         System.out.println("Sazba VAT 20 % a nižší nebo používají speciální sazbu: ");
-        for (Country c: countriesUnder20) {
-            System.out.print(c.getSymbol()+", ");
-        }
+        /**Vypsání bez hranatých závorek*/
+        System.out.println(countriesUnder20.toString().replace("[", "").replace("]", ""));
+
+
         System.out.println();
         /**Výpis seřaďte podle výše základní sazby DPH/VAT sestupně (nejprve státy s nejvyšší sazbou).*/
         System.out.println();
